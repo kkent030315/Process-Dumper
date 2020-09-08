@@ -4,4 +4,4 @@ compiler:
     - g++
 script:
   - make CXX=ProcessDumper/${CXX}
-  - ProcessDumper/main
+  - ./main
