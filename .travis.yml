@@ -1,11 +1,7 @@
 language: cpp
- 
 compiler:
-  - gcc
- 
-install:
-  - sudo apt-get -qq update
-  - sudo apt-get -qq install binutils-mingw-w64-i686 g++-mingw-w64-i686
- 
-before_script:
-  - export CXX=i686-w64-mingw32-g++
+    - clang++
+    - g++
+script:
+  - make CXX=${CXX}
+  - ProcessDumper/main
