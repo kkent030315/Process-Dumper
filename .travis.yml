@@ -3,5 +3,5 @@ compiler:
     - clang++
     - g++
 script:
-  - make CXX=${CXX}
+  - make CXX=ProcessDumper/${CXX}
   - ProcessDumper/main
