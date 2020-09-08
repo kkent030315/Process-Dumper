@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cicatrice/travis-test.svg?branch=master)](https://travis-ci.org/cicatrice/travis-test)
+
 # Process Dumper
 Dumps entire memory of target process on the user-mode.
 
