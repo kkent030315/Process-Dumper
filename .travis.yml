@@ -1,38 +1,11 @@
-language:
-  - cpp
-sudo: required
-dist: trusty
-cache: apt
-env:
-  global:
-    - GCC_VERSION=7
-    - LIBSTDC_VERSION=7
-
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r/test/ubuntu
-      - llvm-toolchain-trusty
-      - jonathonf/gcc-7.1/ubuntu
-    packages:
-      - clang-5.0
-      - build-essential
-      - binutils
-#       - libboost-all-de
-      - cmake
-      - libgtest-dev
-
-before_install :
-  - sudo add-apt-repository --yes ppa:jonathonf/binutils
-  - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
-  - sudo apt-get update -qq
-
+language: cpp
+ 
+compiler:
+  - gcc
+ 
 install:
-  - sudo apt-get install gcc-7 g++-7
-  - sudo cmake --build . && sudo mv libg* /usr/local/lib/ ; cd -
-
-script:
-  - clang++-5.0 --version
-  - g++-7 --version
-  - g++-7 -std=gnu++1z -Wall -Wextra -pedantic ProcessDumper/main.cpp && ./a.out
-  - clang++-5.0 -std=gnu++1z -Wall -Wextra -pedantic ProcessDumper/main.cpp && ./a.out
+  - sudo apt-get -qq update
+  - sudo apt-get -qq install binutils-mingw-w64-i686 g++-mingw-w64-i686
+ 
+before_script:
+  - export CXX=i686-w64-mingw32-g++
