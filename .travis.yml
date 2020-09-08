@@ -18,7 +18,7 @@ addons:
       - clang-5.0
       - build-essential
       - binutils
-#       - libboost-all-dev
+#       - libboost-all-de
       - cmake
       - libgtest-dev
 
