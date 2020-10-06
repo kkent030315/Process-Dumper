@@ -2,7 +2,8 @@
 
 bool memory::init(const std::string_view process_name)
 {
-    detail::process_id = util::get_process_id("notepad.exe");
+    detail::process_id = util::get_process_id(process_name);
+
     printf("[+] process id [%d]\n", detail::process_id);
 
     if (!detail::process_id)
