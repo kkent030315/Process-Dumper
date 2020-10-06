@@ -33,7 +33,7 @@ bool dumper::dump()
         return false;
     }
 
-    printf("[+] dos header [0x%llX]\n", nt_header);
+    printf("[+] nt header [0x%llX]\n", nt_header);
 
     const auto image_size = nt_header.OptionalHeader.SizeOfImage;
 
